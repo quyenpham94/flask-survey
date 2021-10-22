@@ -32,7 +32,7 @@ satisfaction_survey = Survey(
         Question("On average, how much do you spend a month on frisbees?",
                  ["Less than $10,000", "$10,000 or more"]),
         Question("Are you likely to shop here again?"),
-        Question("I am Bonus Question")
+       
     ])
 
 personality_quiz = Survey(

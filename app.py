@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request
+from flask import Flask, render_template, redirect, request, flash
 from surveys import satisfaction_survey as survey
 
 
@@ -38,6 +38,7 @@ def question_page(number):
 @app.route('/answer', methods=["POST"])
 def answer_page():
     # responses = []
+
     # get the choice from customer
     choice = request.form['answer']
     responses.append(choice)
