@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, request, flash
-# from surveys import satisfaction_survey as survey
+
 from surveys import surveys
 
 app = Flask(__name__)
@@ -17,7 +17,9 @@ def home_page():
 def survey_page():
     survey_id = request.form['survey_code']
     survey = surveys[survey_id]
+  
     return render_template('survey_page.html', survey=survey)
+   
 
 @app.route('/start', methods=["POST"])
 def start_survey():
@@ -27,6 +29,8 @@ def start_survey():
 @app.route('/questions/<int:number>')
 def question_page(number):
     # responses = []
+    survey_id = request.form['survey_code']
+    survey = surveys[survey_id]
     if (len(responses) == len(survey.questions)):
         return redirect('/complete')
     if (len(responses) is None):

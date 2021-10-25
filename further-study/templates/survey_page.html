@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
-{% block title %} {{ surveys.title }} {% endblock %}
+{% block title %} {{ survey.title }} {% endblock %}
 {% block content %}
 
     <h1>{{ survey.title }}</h1>
     <p>{{ survey.instructions }}</p>
     <form action="/start" method="POST">
-        <button>Start</button>
+        <button>Start!</button>
     </form>
 {% endblock %}

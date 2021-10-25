@@ -6,7 +6,7 @@
     <form action="/" method="POST">
         <p>Choose a survey:</p>
         <select name="survey_code">
-            {% for num, survey in surveys.items() %}
+            {% for code, survey in surveys.items() %}
             <option value="{{ code }}">{{ survey.title }}</option>
             {% endfor %}
         </select>
